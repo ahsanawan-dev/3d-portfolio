@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b17">
+  <meta name="description" content="Muhammad Ahsan Awan is an aspiring full-stack web developer creating modern, responsive and interactive websites.">
+
+  <title>Muhammad Ahsan Awan | Web Developer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar container" aria-label="Main navigation">
+
+      <a href="#home" class="logo">
+        AHSAN<span>.</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="navLinks"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-btn">Contact Me ↗</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero container" id="home">
+
+      <div class="hero-content reveal">
+
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          WELCOME TO MY DIGITAL WORLD
+        </p>
+
+        <h1>
+          Hi, I'm
+          <span class="gradient-text">
+            Muhammad Ahsan Awan.
+          </span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          Aspiring <span id="typingText">Full-Stack Developer</span><span class="cursor">|</span>
+        </h2>
+
+        <p class="hero-description">
+          I'm a passionate web development student
+          building modern, responsive and interactive
+          digital experiences using HTML, CSS,
+          JavaScript, PHP and emerging web technologies.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work ↗
+          </a>
+
+          <a href="#about" class="btn btn-outline">
+            About Me
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>3D</strong>
+            <span>Creative Experiences</span>
+          </div>
+
+          <div>
+            <strong>100%</strong>
+            <span>Responsive Focus</span>
+          </div>
+
+          <div>
+            <strong>∞</strong>
+            <span>Learning Mindset</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROTATING 3D CUBE -->
+      <div class="hero-visual reveal">
+
+        <div class="scene" id="scene">
+
+          <div class="scene-glow"></div>
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="cube-tilt" id="cubeTilt">
+
+            <div class="cube">
+              <div class="face front">HTML</div>
+              <div class="face back">CSS</div>
+              <div class="face right">JS</div>
+              <div class="face left">3D</div>
+              <div class="face top">PHP</div>
+              <div class="face bottom">WEB</div>
+            </div>
+
+          </div>
+
+          <div class="floating-label label-one">
+            ✦ Creative Developer
+          </div>
+
+          <div class="floating-label label-two">
+            ⚡ Interactive Design
+          </div>
+
+          <div class="floating-label label-three">
+            ◈ 3D Experiences
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section container" id="about">
+
+      <div class="section-heading reveal">
+        <p class="section-tag">01 / ABOUT ME</p>
+
+        <h2>
+          Passion Meets
+          <span class="gradient-text">Code.</span>
+        </h2>
+
+        <p>
+          Turning curiosity and creativity into
+          meaningful digital experiences.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <article class="glass-card about-main reveal">
+          <div class="card-icon">✦</div>
+
+          <h3>Who is Muhammad Ahsan Awan?</h3>
+
+          <p>
+            I'm an aspiring full-stack web developer
+            with a strong passion for technology,
+            creative design and problem-solving.
+          </p>
+
+          <p>
+            I'm currently learning HTML, CSS,
+            JavaScript, PHP, databases and modern
+            development workflows.
+          </p>
+
+          <p>
+            My long-term ambition is to contribute
+            to international software projects,
+            collaborate with talented developers,
+            and build reliable, high-quality
+            digital products.
+          </p>
+
+          <a href="#skills" class="text-link">
+            Discover My Skills ↗
+          </a>
+        </article>
+
+        <article class="glass-card about-side reveal">
+
+          <div class="card-icon">◈</div>
+
+          <h3>My Development Philosophy</h3>
+
+          <p>
+            Learn continuously. Build thoughtfully.
+            Write clean code. Improve every day.
+          </p>
+
+          <div class="mini-tags">
+            <span>Creative</span>
+            <span>Responsive</span>
+            <span>Accessible</span>
+            <span>Problem Solver</span>
+            <span>Always Learning</span>
+          </div>
+
+          <div class="about-note">
+            <span class="status-dot"></span>
+            Currently building my portfolio
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section container" id="projects">
+
+      <div class="section-heading reveal">
+        <p class="section-tag">02 / MY PROJECTS</p>
+
+        <h2>
+          Creative
+          <span class="gradient-text">Projects.</span>
+        </h2>
+
+        <p>
+          My current portfolio project and the
+          exciting experiences I'm planning to build next.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card reveal">
+          <div class="project-art art-portfolio">
+            <span class="project-symbol">◈</span>
+            <span class="art-caption">3D PORTFOLIO</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-category">HTML • CSS • JAVASCRIPT</p>
+
+            <h3>Personal 3D Portfolio</h3>
+
+            <p>
+              A responsive developer portfolio
+              with an animated CSS 3D cube,
+              interactive effects and modern design.
+            </p>
+
+            <span class="project-status current">
+              ● Current Project
+            </span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-car">
+            <span class="project-symbol">◇</span>
+            <span class="art-caption">LUXURY MOTORS</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-category">THREE.JS • JAVASCRIPT</p>
+
+            <h3>3D Luxury Car Showroom</h3>
+
+            <p>
+              An upcoming premium automotive
+              experience with interactive
+              3D vehicle models and animations.
+            </p>
+
+            <span class="project-status">
+              ↗ Planned Project
+            </span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-coffee">
+            <span class="project-symbol">☕</span>
+            <span class="art-caption">PREMIUM COFFEE</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-category">FRONTEND • RESPONSIVE DESIGN</p>
+
+            <h3>Premium Coffee Shop</h3>
+
+            <p>
+              An upcoming modern cafe website
+              featuring product visuals,
+              smooth animations and a stylish menu.
+            </p>
+
+            <span class="project-status">
+              ↗ Planned Project
+            </span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-shop">
+            <span class="project-symbol">⬡</span>
+            <span class="art-caption">ONLINE STORE</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-category">PHP • MYSQL • JAVASCRIPT</p>
+
+            <h3>Full-Stack E-Commerce</h3>
+
+            <p>
+              A planned shopping platform
+              with product management,
+              shopping cart and database features.
+            </p>
+
+            <span class="project-status">
+              ↗ Planned Project
+            </span>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section container" id="skills">
+
+      <div class="section-heading reveal">
+        <p class="section-tag">03 / MY TOOLKIT</p>
+
+        <h2>
+          Technologies I'm
+          <span class="gradient-text">Learning.</span>
+        </h2>
+
+        <p>
+          Building my development skills
+          through practice and real projects.
+        </p>
+      </div>
+
+      <div class="skills-grid reveal">
+
+        <div class="skill-item">
+          <span class="skill-icon">🌐</span>
+          <div>
+            <strong>HTML5</strong>
+            <small>Web Structure</small>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-icon">🎨</span>
+          <div>
+            <strong>CSS3</strong>
+            <small>Design & Animation</small>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-icon">⚡</span>
+          <div>
+            <strong>JavaScript</strong>
+            <small>Interactivity</small>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-icon">🐘</span>
+          <div>
+            <strong>PHP</strong>
+            <small>Backend Development</small>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-icon">🗄️</span>
+          <div>
+            <strong>MySQL</strong>
+            <small>Database Fundamentals</small>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-icon">🔀</span>
+          <div>
+            <strong>Git & GitHub</strong>
+            <small>Version Control</small>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section container" id="contact">
+
+      <div class="contact-box reveal">
+
+        <p class="section-tag">04 / LET'S CONNECT</p>
+
+        <h2>
+          Let's Build Something
+          <span class="gradient-text">Amazing.</span>
+        </h2>
+
+        <p>
+          I'm growing as a developer and looking forward
+          to learning, collaborating and building
+          meaningful digital experiences.
+        </p>
+
+        <p class="contact-note">
+          Professional contact information and GitHub
+          profile link will be added soon.
+        </p>
+
+        <a href="#projects" class="btn btn-primary">
+          Explore My Projects ↗
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <a href="#home" class="logo">
+        AHSAN<span>.</span>
+      </a>
+
+      <p>
+        © <span id="year"></span>
+        Muhammad Ahsan Awan.
+        All rights reserved.
+      </p>
+
+      <a href="#home" class="back-top">
+        Back to Top ↑
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
