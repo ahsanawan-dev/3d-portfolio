@@ -1,14 +1,16 @@
-
 "use strict";
 
-/* ======================================
-   MUHAMMAD AHSAN AWAN
-   PORTFOLIO JAVASCRIPT
-====================================== */
+/* =========================================================
+   MUHAMMAD AHSAN AWAN — PORTFOLIO V2
+   Interactive Portfolio JavaScript
+========================================================= */
 
 document.documentElement.classList.add("js");
 
-// ELEMENTS
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const scene = document.getElementById("scene");
@@ -17,552 +19,430 @@ const typingText = document.getElementById("typingText");
 const progressBar = document.getElementById("scrollProgress");
 const yearElement = document.getElementById("year");
 
-// ACCESSIBILITY SETTINGS
-const reducedMotion = window.matchMedia(
+const backToTop =
+  document.getElementById("backToTop") ||
+  document.querySelector(".back-to-top");
+
+const navAnchors = document.querySelectorAll(
+  '.nav-links a[href^="#"], a[data-scroll]'
+);
+
+const sections = document.querySelectorAll("section[id]");
+
+const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
-);
+).matches;
 
-const finePointer = window.matchMedia(
-  "(hover: hover) and (pointer: fine)"
-);
-
-/* ======================================
-   MOBILE NAVIGATION
-====================================== */
-
-function closeMenu() {
-  navLinks.classList.remove("is-open");
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  menuToggle.setAttribute(
-    "aria-label",
-    "Open navigation"
-  );
-}
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("is-open");
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
-
-  menuToggle.setAttribute(
-    "aria-label",
-    isOpen ? "Close navigation" : "Open navigation"
-  );
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", closeMenu);
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMenu();
-  }
-});
-
-document.addEventListener("click", (event) => {
-  if (
-    !navLinks.contains(event.target) &&
-    !menuToggle.contains(event.target)
-  ) {
-    closeMenu();
-  }
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 760) {
-    closeMenu();
-  }
-});
-
-/* ======================================
-   TYPING ANIMATION
-====================================== */
-
-const words = [
-  "Full-Stack Developer",
-  "Creative Web Developer",
-  "Frontend Enthusiast",
-  "Future Software Engineer"
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-let typingTimeout;
-
-function typeWriter() {
-  if (!typingText) return;
-
-  const currentWord = words[wordIndex];
-
-  if (deleting) {
-    charIndex--;
-  } else {
-    charIndex++;
-  }
-
-  typingText.textContent = currentWord.substring(
-    0,
-    charIndex
-  );
-
-  let delay = deleting ? 55 : 95;
-
-  if (!deleting && charIndex === currentWord.length) {
-    delay = 1800;
-    deleting = true;
-  } else if (deleting && charIndex === 0) {
-    deleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    delay = 450;
-  }
-
-  typingTimeout = setTimeout(typeWriter, delay);
-}
-
-if (typingText && !reducedMotion.matches) {
-  typingText.textContent = "";
-  typeWriter();
-} else if (typingText) {
-  typingText.textContent = words[0];
-}
-
-/* ======================================
-   INTERACTIVE 3D CUBE
-====================================== */
-
-if (
-  scene &&
-  cubeTilt &&
-  finePointer.matches &&
-  !reducedMotion.matches
-) {
-
-  scene.addEventListener("pointermove", (event) => {
-
-    const bounds = scene.getBoundingClientRect();
-
-    const x = (
-      event.clientX - bounds.left
-    ) / bounds.width;
-
-    const y = (
-      event.clientY - bounds.top
-    ) / bounds.height;
-
-    const rotateY = (x - 0.5) * 35;
-    const rotateX = -(y - 0.5) * 35;
-
-    cubeTilt.style.setProperty(
-      "--tilt-x",
-      `${rotateX}deg`
-    );
-
-    cubeTilt.style.setProperty(
-      "--tilt-y",
-      `${rotateY}deg`
-    );
-
-  });
-
-  scene.addEventListener("pointerleave", () => {
-
-    cubeTilt.style.removeProperty("--tilt-x");
-    cubeTilt.style.removeProperty("--tilt-y");
-
-  });
-
-}
-
-/* ======================================
-   SCROLL REVEAL ANIMATIONS
-====================================== */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if (
-  "IntersectionObserver" in window &&
-  !reducedMotion.matches
-) {
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.08,
-      rootMargin: "0px 0px -25px 0px"
-    }
-  );
-
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
-
-} else {
-
-  revealElements.forEach((element) => {
-    element.classList.add("visible");
-  });
-
-}
-
-/* ======================================
-   SCROLL PROGRESS BAR
-====================================== */
-
-function updateScrollProgress() {
-
-  if (!progressBar) return;
-
-  const scrollTop = window.scrollY;
-
-  const scrollHeight =
-    document.documentElement.scrollHeight -
-    window.innerHeight;
-
-  const percentage = scrollHeight > 0
-    ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
-    : 0;
-
-  progressBar.style.width = `${percentage}%`;
-
-}
-
-window.addEventListener(
-  "scroll",
-  updateScrollProgress,
-  { passive: true }
-);
-
-window.addEventListener(
-  "resize",
-  updateScrollProgress
-);
-
-updateScrollProgress();
-
-/* ======================================
-   DYNAMIC COPYRIGHT YEAR
-====================================== */
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-/* ======================================
-   CONSOLE STATUS
-====================================== */
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
 
-console.log(
-  "Muhammad Ahsan Awan Portfolio Loaded Successfully!"
-);
+if (menuToggle && navLinks) {
+  const closeMenu = () => {
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  };
 
-/* ==========================================
-   AHSAN PORTFOLIO V2.0
-   ADVANCED INTERACTIVE EFFECTS
-========================================== */
+  const openMenu = () => {
+    navLinks.classList.add("active");
+    menuToggle.classList.add("active");
+    menuToggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+  };
 
-(() => {
-  "use strict";
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.contains("active");
 
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  const hasFinePointer = window.matchMedia(
-    "(hover: hover) and (pointer: fine)"
-  ).matches;
-
-  /* BACK TO TOP */
-
-  const topButton = document.createElement("button");
-
-  topButton.id = "backToTop";
-  topButton.type = "button";
-  topButton.textContent = "↑";
-  topButton.setAttribute(
-    "aria-label",
-    "Scroll back to top"
-  );
-  topButton.setAttribute("title", "Back to top");
-
-  document.body.appendChild(topButton);
-
-  function updateTopButton() {
-    topButton.classList.toggle(
-      "show",
-      window.scrollY > 450
-    );
-  }
-
-  topButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: reduceMotion ? "auto" : "smooth"
-    });
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  window.addEventListener(
-    "scroll",
-    updateTopButton,
-    { passive: true }
-  );
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 
-  updateTopButton();
+  document.addEventListener("click", (event) => {
+    const clickedInsideMenu =
+      navLinks.contains(event.target) ||
+      menuToggle.contains(event.target);
 
-  /* 3D PROJECT CARD TILT */
-
-  if (hasFinePointer && !reduceMotion) {
-    const cards = document.querySelectorAll(
-      ".project-card"
-    );
-
-    cards.forEach((card) => {
-
-      card.addEventListener("pointerenter", () => {
-        card.classList.add("is-tilting");
-      });
-
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-
-        const x =
-          (event.clientX - rect.left) / rect.width;
-
-        const y =
-          (event.clientY - rect.top) / rect.height;
-
-        const rotateY = (x - 0.5) * 12;
-        const rotateX = (0.5 - y) * 12;
-
-        card.style.transform =
-          `perspective(900px) rotateX(${rotateX}deg) ` +
-          `rotateY(${rotateY}deg) translateY(-6px)`;
-      });
-
-      card.addEventListener("pointerleave", () => {
-        card.classList.remove("is-tilting");
-        card.style.removeProperty("transform");
-      });
-
-    });
-  }
-
-  /* CURSOR GLOW */
-
-  if (hasFinePointer && !reduceMotion) {
-
-    const aura = document.createElement("div");
-    aura.className = "cursor-aura";
-    aura.setAttribute("aria-hidden", "true");
-
-    document.body.appendChild(aura);
-
-    document.addEventListener(
-      "pointermove",
-      (event) => {
-        if (event.pointerType !== "mouse") return;
-
-        aura.style.left = `${event.clientX}px`;
-        aura.style.top = `${event.clientY}px`;
-        aura.style.opacity = "1";
-      },
-      { passive: true }
-    );
-
-    document.addEventListener("pointerout", (event) => {
-      if (!event.relatedTarget) {
-        aura.style.opacity = "0";
-      }
-    });
-
-  }
-
-  /* ANIMATED CONSTELLATION BACKGROUND */
-
-  const canvas = document.createElement("canvas");
-
-  canvas.className = "portfolio-stars";
-  canvas.setAttribute("aria-hidden", "true");
-
-  document.body.prepend(canvas);
-
-  const ctx = canvas.getContext("2d");
-
-  if (!ctx) return;
-
-  let width = 0;
-  let height = 0;
-  let stars = [];
-  let frameId = null;
-
-  function resizeCanvas() {
-
-    width = window.innerWidth;
-    height = window.innerHeight;
-
-    const ratio = Math.min(
-      window.devicePixelRatio || 1,
-      2
-    );
-
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-    const count = Math.min(
-      65,
-      Math.max(
-        12,
-        Math.floor((width * height) / 24000)
-      )
-    );
-
-    stars = Array.from(
-      { length: count },
-      () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 1.2 + 0.5,
-        speed: Math.random() * 0.25 + 0.08
-      })
-    );
-
-  }
-
-  function drawStars(animate) {
-
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < stars.length; i++) {
-
-      const star = stars[i];
-
-      if (animate) {
-        star.y -= star.speed;
-
-        if (star.y < -5) {
-          star.y = height + 5;
-          star.x = Math.random() * width;
-        }
-      }
-
-      // Star points
-      ctx.beginPath();
-      ctx.arc(
-        star.x,
-        star.y,
-        star.radius,
-        0,
-        Math.PI * 2
-      );
-
-      ctx.fillStyle = "rgba(160, 194, 255, 0.65)";
-      ctx.fill();
-
-      // Nearby constellation lines
-      for (let j = i + 1; j < stars.length; j++) {
-
-        const next = stars[j];
-
-        const dx = star.x - next.x;
-        const dy = star.y - next.y;
-
-        const distanceSquared = dx * dx + dy * dy;
-
-        if (distanceSquared < 110 * 110) {
-
-          const distance = Math.sqrt(
-            distanceSquared
-          );
-
-          const alpha =
-            (1 - distance / 110) * 0.13;
-
-          ctx.beginPath();
-          ctx.moveTo(star.x, star.y);
-          ctx.lineTo(next.x, next.y);
-
-          ctx.strokeStyle =
-            `rgba(117, 162, 255, ${alpha})`;
-
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-
-        }
-
-      }
+    if (!clickedInsideMenu) {
+      closeMenu();
     }
+  });
 
-  }
-
-  function animationLoop() {
-
-    if (document.hidden) {
-      frameId = null;
-      return;
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
     }
-
-    drawStars(true);
-    frameId = requestAnimationFrame(animationLoop);
-
-  }
-
-  function startAnimation() {
-
-    if (frameId === null && !reduceMotion) {
-      frameId = requestAnimationFrame(animationLoop);
-    }
-
-  }
-
-  resizeCanvas();
-
-  if (reduceMotion) {
-    drawStars(false);
-  } else {
-    startAnimation();
-  }
+  });
 
   window.addEventListener("resize", () => {
-
-    resizeCanvas();
-
-    if (reduceMotion) {
-      drawStars(false);
+    if (window.innerWidth > 900) {
+      closeMenu();
     }
+  });
+}
 
+/* =========================================================
+   SMOOTH SECTION SCROLLING
+========================================================= */
+
+navAnchors.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+
+    if (!targetId || !targetId.startsWith("#")) return;
+
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    target.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start",
+    });
+  });
+});
+
+/* =========================================================
+   SCROLL PROGRESS BAR
+========================================================= */
+
+const updateScrollProgress = () => {
+  if (!progressBar) return;
+
+  const scrollTop =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress =
+    scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+  progressBar.style.width = `${Math.min(progress, 100)}%`;
+};
+
+window.addEventListener("scroll", updateScrollProgress, {
+  passive: true,
+});
+
+window.addEventListener("resize", updateScrollProgress);
+
+updateScrollProgress();
+
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+========================================================= */
+
+const updateActiveNavigation = () => {
+  if (!sections.length) return;
+
+  const scrollPosition = window.scrollY + 180;
+
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      currentSection = section.id;
+    }
   });
 
-  document.addEventListener(
-    "visibilitychange",
-    () => {
-      if (!document.hidden) {
-        startAnimation();
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
+    const target = link.getAttribute("href");
+
+    link.classList.toggle(
+      "active",
+      target === `#${currentSection}`
+    );
+  });
+};
+
+window.addEventListener("scroll", updateActiveNavigation, {
+  passive: true,
+});
+
+updateActiveNavigation();
+
+/* =========================================================
+   HERO TYPING EFFECT
+========================================================= */
+
+const typingWords = [
+  "Full-Stack Web Developer",
+  "Frontend Developer",
+  "Creative Web Developer",
+  "JavaScript Developer",
+  "UI / UX Enthusiast",
+];
+
+if (typingText) {
+  if (reduceMotion) {
+    typingText.textContent = typingWords[0];
+  } else {
+    let wordIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+
+    const type = () => {
+      const currentWord = typingWords[wordIndex];
+
+      if (!deleting) {
+        characterIndex += 1;
+        typingText.textContent = currentWord.slice(
+          0,
+          characterIndex
+        );
+
+        if (characterIndex === currentWord.length) {
+          deleting = true;
+          setTimeout(type, 1600);
+          return;
+        }
+      } else {
+        characterIndex -= 1;
+        typingText.textContent = currentWord.slice(
+          0,
+          characterIndex
+        );
+
+        if (characterIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % typingWords.length;
+        }
       }
-    }
-  );
 
-  console.log("AHSAN Portfolio V2.0 effects ready!");
+      const delay = deleting ? 45 : 85;
 
-})();
+      setTimeout(type, delay);
+    };
+
+    type();
+  }
+}
+
+/* =========================================================
+   3D HERO TILT
+========================================================= */
+
+if (scene && cubeTilt && !reduceMotion) {
+  const resetTilt = () => {
+    cubeTilt.style.transform =
+      "rotateX(0deg) rotateY(0deg)";
+  };
+
+  scene.addEventListener("mousemove", (event) => {
+    const rect = scene.getBoundingClientRect();
+
+    const x =
+      (event.clientX - rect.left) / rect.width - 0.5;
+
+    const y =
+      (event.clientY - rect.top) / rect.height - 0.5;
+
+    const rotateY = x * 18;
+    const rotateX = y * -18;
+
+    cubeTilt.style.transform = `
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+    `;
+  });
+
+  scene.addEventListener("mouseleave", resetTilt);
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+
+const revealElements = document.querySelectorAll(
+  ".reveal, [data-reveal]"
+);
+
+if (revealElements.length) {
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px",
+      }
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  }
+}
+
+/* =========================================================
+   PROJECT CARD TILT
+========================================================= */
+
+const tiltCards = document.querySelectorAll(
+  ".project-card, .skill-card, [data-tilt]"
+);
+
+if (!reduceMotion) {
+  tiltCards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+
+      const x =
+        (event.clientX - rect.left) / rect.width - 0.5;
+
+      const y =
+        (event.clientY - rect.top) / rect.height - 0.5;
+
+      card.style.transform = `
+        perspective(900px)
+        rotateX(${y * -5}deg)
+        rotateY(${x * 5}deg)
+        translateY(-4px)
+      `;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+}
+
+/* =========================================================
+   CURSOR AURA
+========================================================= */
+
+const cursorAura = document.querySelector(".cursor-aura");
+
+if (
+  cursorAura &&
+  !reduceMotion &&
+  window.matchMedia("(pointer: fine)").matches
+) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let auraX = 0;
+  let auraY = 0;
+
+  document.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  });
+
+  const animateAura = () => {
+    auraX += (mouseX - auraX) * 0.14;
+    auraY += (mouseY - auraY) * 0.14;
+
+    cursorAura.style.transform =
+      `translate3d(${auraX}px, ${auraY}px, 0)`;
+
+    requestAnimationFrame(animateAura);
+  };
+
+  animateAura();
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+if (backToTop) {
+  const updateBackToTop = () => {
+    backToTop.classList.toggle(
+      "visible",
+      window.scrollY > 500
+    );
+  };
+
+  window.addEventListener("scroll", updateBackToTop, {
+    passive: true,
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  });
+
+  updateBackToTop();
+}
+
+/* =========================================================
+   EXTERNAL LINKS
+========================================================= */
+
+document
+  .querySelectorAll('a[target="_blank"]')
+  .forEach((link) => {
+    const rel = link.getAttribute("rel") || "";
+    const values = new Set(rel.split(/\s+/).filter(Boolean));
+
+    values.add("noopener");
+    values.add("noreferrer");
+
+    link.setAttribute(
+      "rel",
+      Array.from(values).join(" ")
+    );
+  });
+
+/* =========================================================
+   KEYBOARD ACCESSIBILITY
+========================================================= */
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Tab") {
+    document.body.classList.add("keyboard-user");
+  }
+});
+
+document.addEventListener("mousedown", () => {
+  document.body.classList.remove("keyboard-user");
+});
+
+/* =========================================================
+   PAGE READY
+========================================================= */
+
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+
+  updateScrollProgress();
+  updateActiveNavigation();
+});
