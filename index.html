@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="Muhammad Ahsan Awan — aspiring Full-Stack Web Developer building modern, responsive and interactive web experiences."
   >
 
-  <meta name="theme-color" content="#070b17">
+  <meta name="theme-color" content="#080b17">
 
   <title>Muhammad Ahsan Awan | Full-Stack Web Developer</title>
 
@@ -19,23 +23,28 @@
 
 <body>
 
-  <!-- Accessibility -->
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- Scroll Progress -->
+  <!-- Scroll progress -->
   <div
     class="scroll-progress"
     id="scrollProgress"
     aria-hidden="true"
   ></div>
 
-  <!-- =========================
-       HEADER / NAVIGATION
-  ========================== -->
-  <header class="header" id="top">
-    <nav class="navbar container" aria-label="Main navigation">
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="site-header" id="header">
 
-      <a href="#home" class="logo" aria-label="Ahsan home">
+    <nav
+      class="navbar container"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="#home"
+        class="logo"
+        aria-label="Ahsan home"
+      >
         AHSAN<span>.</span>
       </a>
 
@@ -43,7 +52,7 @@
         class="menu-toggle"
         id="menuToggle"
         type="button"
-        aria-label="Open navigation"
+        aria-label="Open navigation menu"
         aria-controls="navLinks"
         aria-expanded="false"
       >
@@ -52,80 +61,111 @@
         <span></span>
       </button>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link nav-cta">
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+
+        <a
+          class="nav-contact"
+          href="#contact"
+        >
           Contact Me ↗
         </a>
       </div>
 
     </nav>
+
   </header>
 
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
   <main id="main">
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================== -->
-    <section class="hero section" id="home">
+    ====================================================== -->
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div
+        class="particles"
+        id="particles"
+        aria-hidden="true"
+      ></div>
 
       <div class="hero-glow hero-glow-one"></div>
       <div class="hero-glow hero-glow-two"></div>
 
-      <div class="hero-grid container">
+      <div class="container hero-grid">
 
-        <div class="hero-content reveal">
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
 
-          <div class="eyebrow">
-            <span class="status-dot"></span>
+          <div class="eyebrow reveal">
+            <span class="eyebrow-dot"></span>
             Welcome to my digital world
           </div>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title reveal">
             Hi, I'm
-            <span>Muhammad</span>
-            <span>Ahsan Awan.</span>
+            <span class="gradient-text">
+              Muhammad<br>
+              Ahsan Awan.
+            </span>
           </h1>
 
-          <p class="hero-role">
-            Aspiring
-            <span id="typingText">Full-Stack Web Developer</span>
+          <div class="typing-line reveal">
+            <span id="typingText">
+              Aspiring Frontend Developer
+            </span>
+            <span class="typing-cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-description reveal">
+            I build modern, responsive and interactive digital
+            experiences using HTML, CSS and JavaScript while expanding
+            my skills in PHP, MySQL and full-stack development.
           </p>
 
-          <p class="hero-description">
-            I build modern, responsive and interactive digital experiences
-            using HTML, CSS and JavaScript while expanding my skills in
-            PHP, MySQL and full-stack development.
-          </p>
+          <div class="hero-actions reveal">
 
-          <div class="hero-actions">
-
-            <a href="#projects" class="btn btn-primary">
+            <a
+              class="button button-primary"
+              href="#projects"
+            >
               Explore My Work ↗
             </a>
 
-            <a href="#about" class="btn btn-secondary">
+            <a
+              class="button button-secondary"
+              href="#about"
+            >
               About Me
             </a>
 
           </div>
 
-          <div class="hero-meta">
+          <div class="hero-stats reveal">
 
-            <div class="meta-item">
+            <div class="stat-item">
               <strong>02+</strong>
               <span>Featured Projects</span>
             </div>
 
-            <div class="meta-item">
+            <div class="stat-item">
               <strong>100%</strong>
               <span>Responsive Focus</span>
             </div>
 
-            <div class="meta-item">
+            <div class="stat-item">
               <strong>∞</strong>
               <span>Learning Mindset</span>
             </div>
@@ -134,8 +174,12 @@
 
         </div>
 
-        <!-- Visual -->
-        <div class="hero-visual reveal">
+        <!-- HERO VISUAL -->
+        <div
+          class="hero-visual reveal"
+          id="scene"
+          aria-hidden="true"
+        >
 
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
@@ -152,40 +196,69 @@
             ◆ Web Experiences
           </div>
 
-          <div class="cube-scene" aria-hidden="true">
-            <div class="cube" id="heroCube">
+          <div
+            class="cube-tilt"
+            id="cubeTilt"
+          >
 
-              <div class="cube-face cube-front">3D</div>
-              <div class="cube-face cube-back">JS</div>
-              <div class="cube-face cube-right">CSS</div>
-              <div class="cube-face cube-left">HTML</div>
-              <div class="cube-face cube-top">UI</div>
-              <div class="cube-face cube-bottom">WEB</div>
+            <div class="cube">
+
+              <div class="cube-face cube-front">
+                HTML
+              </div>
+
+              <div class="cube-face cube-back">
+                CSS
+              </div>
+
+              <div class="cube-face cube-right">
+                JS
+              </div>
+
+              <div class="cube-face cube-left">
+                PHP
+              </div>
+
+              <div class="cube-face cube-top">
+                UI
+              </div>
+
+              <div class="cube-face cube-bottom">
+                3D
+              </div>
 
             </div>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          ABOUT
-    ========================== -->
-    <section class="about section" id="about">
+    ====================================================== -->
+    <section
+      class="section about-section"
+      id="about"
+    >
 
       <div class="container">
 
         <div class="section-heading reveal">
 
-          <span class="section-label">
-            01 / About
-          </span>
+          <div class="section-label">
+            <span></span>
+            01 / ABOUT
+          </div>
 
           <h2>
             Building digital experiences
-            <span>with purpose.</span>
+            <span class="gradient-text">
+              with purpose.
+            </span>
           </h2>
 
           <p>
@@ -197,9 +270,9 @@
 
         <div class="about-grid">
 
-          <article class="about-card about-story reveal">
+          <article class="info-card reveal">
 
-            <span class="card-number">01</span>
+            <div class="card-number">01</div>
 
             <h3>My Journey</h3>
 
@@ -210,25 +283,25 @@
             </p>
 
             <p>
-              My current stack includes HTML, CSS and JavaScript, while I
-              continue learning PHP, MySQL, backend development and
+              My current stack includes HTML, CSS and JavaScript, while
+              I continue learning PHP, MySQL, backend development and
               real-world full-stack workflows.
             </p>
 
           </article>
 
-          <article class="about-card reveal">
+          <article class="info-card reveal">
 
-            <span class="card-number">02</span>
+            <div class="card-number">02</div>
 
             <h3>What I Focus On</h3>
 
-            <ul class="feature-list">
+            <ul class="focus-list">
               <li>Responsive web interfaces</li>
               <li>Modern UI/UX design</li>
               <li>JavaScript interactivity</li>
               <li>Accessible frontend development</li>
-              <li>Git & GitHub workflows</li>
+              <li>Git &amp; GitHub workflows</li>
               <li>Continuous technical learning</li>
             </ul>
 
@@ -237,48 +310,53 @@
         </div>
 
       </div>
+
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          PROJECTS
-    ========================== -->
-    <section class="projects section" id="projects">
+    ====================================================== -->
+    <section
+      class="section projects-section"
+      id="projects"
+    >
 
       <div class="container">
 
         <div class="section-heading reveal">
 
-          <span class="section-label">
-            02 / Selected Work
-          </span>
+          <div class="section-label">
+            <span></span>
+            02 / SELECTED WORK
+          </div>
 
           <h2>
             Projects built to
-            <span>learn, experiment and improve.</span>
+            <span class="gradient-text">
+              learn, experiment and improve.
+            </span>
           </h2>
 
         </div>
 
         <div class="projects-grid">
 
-          <!-- Project 01 -->
+          <!-- PROJECT 1 -->
           <article class="project-card reveal">
 
             <div class="project-top">
 
-              <span class="project-index">
-                01
-              </span>
+              <span class="project-number">01</span>
 
-              <span class="project-type">
+              <span class="project-category">
                 Portfolio Experience
               </span>
 
             </div>
 
-            <div class="project-visual portfolio-preview">
+            <div class="project-preview portfolio-preview">
 
-              <div class="project-browser">
+              <div class="browser-window">
 
                 <div class="browser-bar">
                   <span></span>
@@ -287,25 +365,29 @@
                 </div>
 
                 <div class="browser-content">
-                  <span class="mini-label">
-                    PERSONAL PORTFOLIO
-                  </span>
 
-                  <h3>
-                    Interactive
-                    <span>3D Experience.</span>
-                  </h3>
+                  <div class="mini-copy">
+
+                    <span>PERSONAL PORTFOLIO</span>
+
+                    <strong>
+                      Interactive
+                      <em>3D Experience.</em>
+                    </strong>
+
+                  </div>
 
                   <div class="mini-cube">
                     3D
                   </div>
+
                 </div>
 
               </div>
 
             </div>
 
-            <div class="project-content">
+            <div class="project-body">
 
               <h3>
                 Interactive 3D Developer Portfolio
@@ -317,7 +399,7 @@
                 responsive layouts and interactive UI elements.
               </p>
 
-              <div class="project-tags">
+              <div class="tags">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
@@ -348,35 +430,33 @@
 
           </article>
 
-          <!-- Project 02 -->
+          <!-- PROJECT 2 -->
           <article class="project-card reveal">
 
             <div class="project-top">
 
-              <span class="project-index">
-                02
-              </span>
+              <span class="project-number">02</span>
 
-              <span class="project-type">
+              <span class="project-category">
                 Automotive Showcase
               </span>
 
             </div>
 
-            <div class="project-visual velora-preview">
+            <div class="project-preview velora-preview">
 
-              <div class="velora-demo">
+              <div class="velora-frame">
 
                 <div class="velora-brand">
                   VELORA.
                 </div>
 
                 <div class="velora-copy">
-                  <span>The art of</span>
+                  <span>THE ART OF</span>
                   <strong>Motion.</strong>
                 </div>
 
-                <div class="velora-car">
+                <div class="velora-orb">
                   V
                 </div>
 
@@ -384,7 +464,7 @@
 
             </div>
 
-            <div class="project-content">
+            <div class="project-body">
 
               <h3>
                 VELORA Motors — Luxury Car Showroom
@@ -396,7 +476,7 @@
                 JavaScript galleries and a cinematic black-and-gold UI.
               </p>
 
-              <div class="project-tags">
+              <div class="tags">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
@@ -430,195 +510,201 @@
         </div>
 
       </div>
+
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          SKILLS
-    ========================== -->
-    <section class="skills section" id="skills">
+    ====================================================== -->
+    <section
+      class="section skills-section"
+      id="skills"
+    >
 
       <div class="container">
 
         <div class="section-heading reveal">
 
-          <span class="section-label">
-            03 / Skills
-          </span>
+          <div class="section-label">
+            <span></span>
+            03 / SKILLS
+          </div>
 
           <h2>
             Technologies I use and
-            <span>skills I'm developing.</span>
+            <span class="gradient-text">
+              skills I'm developing.
+            </span>
           </h2>
 
         </div>
 
-        <div class="skills-layout">
+        <div class="skills-grid">
 
-          <div class="skills-panel reveal">
+          <article class="skill-card reveal">
 
             <h3>Frontend</h3>
 
-            <div class="skill-items">
-
-              <div class="skill">
-                <span>HTML5</span>
-                <strong>Semantic Structure</strong>
-              </div>
-
-              <div class="skill">
-                <span>CSS3</span>
-                <strong>Responsive UI & Animation</strong>
-              </div>
-
-              <div class="skill">
-                <span>JavaScript</span>
-                <strong>Interactive Interfaces</strong>
-              </div>
-
+            <div class="skill-item">
+              <span>HTML5</span>
+              <strong>Semantic Structure</strong>
             </div>
 
-          </div>
+            <div class="skill-item">
+              <span>CSS3</span>
+              <strong>Responsive UI &amp; Animation</strong>
+            </div>
 
-          <div class="skills-panel reveal">
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <strong>Interactive Interfaces</strong>
+            </div>
+
+          </article>
+
+          <article class="skill-card featured reveal">
 
             <h3>Currently Learning</h3>
 
-            <div class="skill-items">
-
-              <div class="skill">
-                <span>PHP</span>
-                <strong>Backend Development</strong>
-              </div>
-
-              <div class="skill">
-                <span>MySQL</span>
-                <strong>Database Fundamentals</strong>
-              </div>
-
-              <div class="skill">
-                <span>Full Stack</span>
-                <strong>Complete Web Applications</strong>
-              </div>
-
+            <div class="skill-item">
+              <span>PHP</span>
+              <strong>Backend Development</strong>
             </div>
 
-          </div>
+            <div class="skill-item">
+              <span>MySQL</span>
+              <strong>Database Fundamentals</strong>
+            </div>
 
-          <div class="skills-panel reveal">
+            <div class="skill-item">
+              <span>Full Stack</span>
+              <strong>Complete Web Applications</strong>
+            </div>
+
+          </article>
+
+          <article class="skill-card reveal">
 
             <h3>Workflow</h3>
 
-            <div class="skill-items">
-
-              <div class="skill">
-                <span>Git</span>
-                <strong>Version Control</strong>
-              </div>
-
-              <div class="skill">
-                <span>GitHub</span>
-                <strong>Code & Deployment</strong>
-              </div>
-
-              <div class="skill">
-                <span>VS Code</span>
-                <strong>Development Environment</strong>
-              </div>
-
+            <div class="skill-item">
+              <span>Git</span>
+              <strong>Version Control</strong>
             </div>
 
-          </div>
+            <div class="skill-item">
+              <span>GitHub</span>
+              <strong>Code &amp; Deployment</strong>
+            </div>
+
+            <div class="skill-item">
+              <span>VS Code</span>
+              <strong>Development Environment</strong>
+            </div>
+
+          </article>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          CONTACT
-    ========================== -->
-    <section class="contact section" id="contact">
+    ====================================================== -->
+    <section
+      class="section contact-section"
+      id="contact"
+    >
 
       <div class="container">
 
         <div class="contact-card reveal">
 
-          <span class="section-label">
-            04 / Contact
-          </span>
+          <div class="contact-content">
 
-          <h2>
-            Have an idea?
-            <span>Let's build something.</span>
-          </h2>
+            <div class="section-label">
+              <span></span>
+              04 / CONTACT
+            </div>
 
-          <p>
-            I'm continuously improving my skills and building practical
-            projects. You can explore my work and source code through
-            the links below.
-          </p>
+            <h2>
+              Have an idea?
+              <span class="gradient-text">
+                Let's build something.
+              </span>
+            </h2>
 
-          <div class="contact-actions">
+            <p>
+              I'm continuously improving my skills and building practical
+              projects. You can explore my work and source code through
+              the links below.
+            </p>
 
-            <a
-              href="https://github.com/ahsanawan-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              GitHub Profile ↗
-            </a>
+            <div class="contact-actions">
 
-            <a
-              href="https://ahsanawan-dev.github.io/3d-portfolio/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              Current Portfolio ↗
-            </a>
+              <a
+                class="button button-primary"
+                href="https://github.com/ahsanawan-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Profile ↗
+              </a>
+
+              <a
+                class="button button-secondary"
+                href="#projects"
+              >
+                View Projects
+              </a>
+
+            </div>
 
           </div>
+
+          <div
+            class="contact-decoration"
+            aria-hidden="true"
+          ></div>
 
         </div>
 
       </div>
+
     </section>
 
   </main>
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================== -->
+  ====================================================== -->
   <footer class="footer">
 
     <div class="container footer-inner">
 
-      <a href="#home" class="footer-logo">
-        AHSAN<span>.</span>
-      </a>
-
       <p>
-        Built with HTML, CSS & JavaScript.
+        © <span id="year"></span> Muhammad Ahsan Awan
       </p>
 
       <p>
-        © <span id="currentYear"></span> Muhammad Ahsan Awan
+        Designed &amp; built with HTML, CSS &amp; JavaScript.
       </p>
 
     </div>
 
   </footer>
 
-  <!-- Back To Top -->
-  <a
-    href="#home"
+  <!-- Back to top -->
+  <button
     class="back-to-top"
     id="backToTop"
+    type="button"
     aria-label="Back to top"
   >
     ↑
-  </a>
+  </button>
 
 </body>
 </html>
