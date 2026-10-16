@@ -1,13 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b17">
-  <meta name="description" content="Muhammad Ahsan Awan is an aspiring full-stack web developer creating modern, responsive and interactive websites.">
 
-  <title>Muhammad Ahsan Awan | Web Developer</title>
+  <meta
+    name="description"
+    content="Muhammad Ahsan Awan — aspiring Full-Stack Web Developer building modern, responsive and interactive web experiences."
+  >
+
+  <meta name="theme-color" content="#070b17">
+
+  <title>Muhammad Ahsan Awan | Full-Stack Web Developer</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -15,15 +19,23 @@
 
 <body>
 
+  <!-- Accessibility -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- Scroll Progress -->
+  <div
+    class="scroll-progress"
+    id="scrollProgress"
+    aria-hidden="true"
+  ></div>
 
-  <!-- NAVBAR -->
-  <header class="header">
+  <!-- =========================
+       HEADER / NAVIGATION
+  ========================== -->
+  <header class="header" id="top">
     <nav class="navbar container" aria-label="Main navigation">
 
-      <a href="#home" class="logo">
+      <a href="#home" class="logo" aria-label="Ahsan home">
         AHSAN<span>.</span>
       </a>
 
@@ -41,11 +53,13 @@
       </button>
 
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="nav-btn">Contact Me ↗</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link nav-cta">
+          Contact Me ↗
+        </a>
       </div>
 
     </nav>
@@ -53,87 +67,78 @@
 
   <main id="main">
 
-    <!-- HERO SECTION -->
-    <section class="hero container" id="home">
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero section" id="home">
 
-      <div class="hero-content reveal">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
 
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          WELCOME TO MY DIGITAL WORLD
-        </p>
+      <div class="hero-grid container">
 
-        <h1>
-          Hi, I'm
-          <span class="gradient-text">
-            Muhammad Ahsan Awan.
-          </span>
-        </h1>
+        <div class="hero-content reveal">
 
-        <h2 class="hero-subtitle">
-          Aspiring <span id="typingText">Full-Stack Developer</span><span class="cursor">|</span>
-        </h2>
-
-        <p class="hero-description">
-          I'm a passionate web development student
-          building modern, responsive and interactive
-          digital experiences using HTML, CSS,
-          JavaScript, PHP and emerging web technologies.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn btn-primary">
-            Explore My Work ↗
-          </a>
-
-          <a href="#about" class="btn btn-outline">
-            About Me
-          </a>
-
-        </div>
-
-        <div class="hero-stats">
-          <div>
-            <strong>3D</strong>
-            <span>Creative Experiences</span>
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Welcome to my digital world
           </div>
 
-          <div>
-            <strong>100%</strong>
-            <span>Responsive Focus</span>
+          <h1 class="hero-title">
+            Hi, I'm
+            <span>Muhammad</span>
+            <span>Ahsan Awan.</span>
+          </h1>
+
+          <p class="hero-role">
+            Aspiring
+            <span id="typingText">Full-Stack Web Developer</span>
+          </p>
+
+          <p class="hero-description">
+            I build modern, responsive and interactive digital experiences
+            using HTML, CSS and JavaScript while expanding my skills in
+            PHP, MySQL and full-stack development.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work ↗
+            </a>
+
+            <a href="#about" class="btn btn-secondary">
+              About Me
+            </a>
+
           </div>
 
-          <div>
-            <strong>∞</strong>
-            <span>Learning Mindset</span>
-          </div>
-        </div>
+          <div class="hero-meta">
 
-      </div>
+            <div class="meta-item">
+              <strong>02+</strong>
+              <span>Featured Projects</span>
+            </div>
 
-      <!-- ROTATING 3D CUBE -->
-      <div class="hero-visual reveal">
+            <div class="meta-item">
+              <strong>100%</strong>
+              <span>Responsive Focus</span>
+            </div>
 
-        <div class="scene" id="scene">
-
-          <div class="scene-glow"></div>
-
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-
-          <div class="cube-tilt" id="cubeTilt">
-
-            <div class="cube">
-              <div class="face front">HTML</div>
-              <div class="face back">CSS</div>
-              <div class="face right">JS</div>
-              <div class="face left">3D</div>
-              <div class="face top">PHP</div>
-              <div class="face bottom">WEB</div>
+            <div class="meta-item">
+              <strong>∞</strong>
+              <span>Learning Mindset</span>
             </div>
 
           </div>
+
+        </div>
+
+        <!-- Visual -->
+        <div class="hero-visual reveal">
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
 
           <div class="floating-label label-one">
             ✦ Creative Developer
@@ -144,366 +149,476 @@
           </div>
 
           <div class="floating-label label-three">
-            ◈ 3D Experiences
+            ◆ Web Experiences
+          </div>
+
+          <div class="cube-scene" aria-hidden="true">
+            <div class="cube" id="heroCube">
+
+              <div class="cube-face cube-front">3D</div>
+              <div class="cube-face cube-back">JS</div>
+              <div class="cube-face cube-right">CSS</div>
+              <div class="cube-face cube-left">HTML</div>
+              <div class="cube-face cube-top">UI</div>
+              <div class="cube-face cube-bottom">WEB</div>
+
+            </div>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="section container" id="about">
+    <!-- =========================
+         ABOUT
+    ========================== -->
+    <section class="about section" id="about">
 
-      <div class="section-heading reveal">
-        <p class="section-tag">01 / ABOUT ME</p>
+      <div class="container">
 
-        <h2>
-          Passion Meets
-          <span class="gradient-text">Code.</span>
-        </h2>
+        <div class="section-heading reveal">
 
-        <p>
-          Turning curiosity and creativity into
-          meaningful digital experiences.
-        </p>
-      </div>
+          <span class="section-label">
+            01 / About
+          </span>
 
-      <div class="about-grid">
-
-        <article class="glass-card about-main reveal">
-          <div class="card-icon">✦</div>
-
-          <h3>Who is Muhammad Ahsan Awan?</h3>
+          <h2>
+            Building digital experiences
+            <span>with purpose.</span>
+          </h2>
 
           <p>
-            I'm an aspiring full-stack web developer
-            with a strong passion for technology,
-            creative design and problem-solving.
+            I combine clean design, responsive development and practical
+            JavaScript interactions to create polished frontend experiences.
           </p>
 
-          <p>
-            I'm currently learning HTML, CSS,
-            JavaScript, PHP, databases and modern
-            development workflows.
-          </p>
+        </div>
 
-          <p>
-            My long-term ambition is to contribute
-            to international software projects,
-            collaborate with talented developers,
-            and build reliable, high-quality
-            digital products.
-          </p>
+        <div class="about-grid">
 
-          <a href="#skills" class="text-link">
-            Discover My Skills ↗
-          </a>
-        </article>
+          <article class="about-card about-story reveal">
 
-        <article class="glass-card about-side reveal">
+            <span class="card-number">01</span>
 
-          <div class="card-icon">◈</div>
+            <h3>My Journey</h3>
 
-          <h3>My Development Philosophy</h3>
+            <p>
+              I'm an aspiring Full-Stack Web Developer focused on turning
+              ideas into modern websites that look professional, feel
+              interactive and work smoothly across different screen sizes.
+            </p>
 
-          <p>
-            Learn continuously. Build thoughtfully.
-            Write clean code. Improve every day.
-          </p>
+            <p>
+              My current stack includes HTML, CSS and JavaScript, while I
+              continue learning PHP, MySQL, backend development and
+              real-world full-stack workflows.
+            </p>
 
-          <div class="mini-tags">
-            <span>Creative</span>
-            <span>Responsive</span>
-            <span>Accessible</span>
-            <span>Problem Solver</span>
-            <span>Always Learning</span>
-          </div>
+          </article>
 
-          <div class="about-note">
-            <span class="status-dot"></span>
-            Currently building my portfolio
-          </div>
+          <article class="about-card reveal">
 
-        </article>
+            <span class="card-number">02</span>
+
+            <h3>What I Focus On</h3>
+
+            <ul class="feature-list">
+              <li>Responsive web interfaces</li>
+              <li>Modern UI/UX design</li>
+              <li>JavaScript interactivity</li>
+              <li>Accessible frontend development</li>
+              <li>Git & GitHub workflows</li>
+              <li>Continuous technical learning</li>
+            </ul>
+
+          </article>
+
+        </div>
 
       </div>
-
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="section container" id="projects">
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+    <section class="projects section" id="projects">
 
-      <div class="section-heading reveal">
-        <p class="section-tag">02 / MY PROJECTS</p>
+      <div class="container">
 
-        <h2>
-          Creative
-          <span class="gradient-text">Projects.</span>
-        </h2>
+        <div class="section-heading reveal">
 
-        <p>
-          My current portfolio project and the
-          exciting experiences I'm planning to build next.
-        </p>
+          <span class="section-label">
+            02 / Selected Work
+          </span>
+
+          <h2>
+            Projects built to
+            <span>learn, experiment and improve.</span>
+          </h2>
+
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 01 -->
+          <article class="project-card reveal">
+
+            <div class="project-top">
+
+              <span class="project-index">
+                01
+              </span>
+
+              <span class="project-type">
+                Portfolio Experience
+              </span>
+
+            </div>
+
+            <div class="project-visual portfolio-preview">
+
+              <div class="project-browser">
+
+                <div class="browser-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="browser-content">
+                  <span class="mini-label">
+                    PERSONAL PORTFOLIO
+                  </span>
+
+                  <h3>
+                    Interactive
+                    <span>3D Experience.</span>
+                  </h3>
+
+                  <div class="mini-cube">
+                    3D
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                Interactive 3D Developer Portfolio
+              </h3>
+
+              <p>
+                A responsive personal developer portfolio featuring a
+                rotating CSS 3D cube, animated particles, typing effects,
+                responsive layouts and interactive UI elements.
+              </p>
+
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>3D UI</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://ahsanawan-dev.github.io/3d-portfolio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Website ↗
+                </a>
+
+                <a
+                  href="https://github.com/ahsanawan-dev/3d-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source Code ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Project 02 -->
+          <article class="project-card reveal">
+
+            <div class="project-top">
+
+              <span class="project-index">
+                02
+              </span>
+
+              <span class="project-type">
+                Automotive Showcase
+              </span>
+
+            </div>
+
+            <div class="project-visual velora-preview">
+
+              <div class="velora-demo">
+
+                <div class="velora-brand">
+                  VELORA.
+                </div>
+
+                <div class="velora-copy">
+                  <span>The art of</span>
+                  <strong>Motion.</strong>
+                </div>
+
+                <div class="velora-car">
+                  V
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                VELORA Motors — Luxury Car Showroom
+              </h3>
+
+              <p>
+                A premium automotive showroom experience featuring real
+                car photography, multiple viewing angles, interactive
+                JavaScript galleries and a cinematic black-and-gold UI.
+              </p>
+
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Gallery UI</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://ahsanawan-dev.github.io/velora-car-showroom/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Website ↗
+                </a>
+
+                <a
+                  href="https://github.com/ahsanawan-dev/velora-car-showroom"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source Code ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-
-      <div class="project-grid">
-        <article class="project-card reveal">
-  <div class="project-art art-portfolio">
-    <span class="project-symbol">◆</span>
-    <span class="art-caption">VELORA MOTORS</span>
-  </div>
-
-  <div class="project-info">
-    <p class="project-category">HTML • CSS • JAVASCRIPT</p>
-
-    <h3>VELORA Motors</h3>
-
-    <p>
-      A luxury interactive car showroom website featuring real car photography,
-      five premium cars, multiple viewing angles, fullscreen gallery and a
-      cinematic black-gold design.
-    </p>
-
-    <span class="project-status current">
-      • Live Project
-    </span>
-    <div class="project-links">
-  <a href="https://ahsananwan-dev.github.io/velora-car-showroom/" target="_blank">
-    View Live Website ↗
-  </a>
-
-  <a href="https://github.com/ahsananwan-dev/velora-car-showroom" target="_blank">
-    Source Code ↗
-  </a>
-</div>
-  </div>
-</article>
-
-        <article class="project-card reveal">
-          <div class="project-art art-portfolio">
-            <span class="project-symbol">◈</span>
-            <span class="art-caption">3D PORTFOLIO</span>
-          </div>
-
-          <div class="project-info">
-            <p class="project-category">HTML • CSS • JAVASCRIPT</p>
-
-            <h3>Personal 3D Portfolio</h3>
-
-            <p>
-              A responsive developer portfolio
-              with an animated CSS 3D cube,
-              interactive effects and modern design.
-            </p>
-
-            <span class="project-status current">
-              ● Current Project
-            </span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-art art-car">
-            <span class="project-symbol">◇</span>
-            <span class="art-caption">LUXURY MOTORS</span>
-          </div>
-
-          <div class="project-info">
-            <p class="project-category">THREE.JS • JAVASCRIPT</p>
-
-            <h3>3D Luxury Car Showroom</h3>
-
-            <p>
-              An upcoming premium automotive
-              experience with interactive
-              3D vehicle models and animations.
-            </p>
-
-            <span class="project-status">
-              ↗ Planned Project
-            </span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-art art-coffee">
-            <span class="project-symbol">☕</span>
-            <span class="art-caption">PREMIUM COFFEE</span>
-          </div>
-
-          <div class="project-info">
-            <p class="project-category">FRONTEND • RESPONSIVE DESIGN</p>
-
-            <h3>Premium Coffee Shop</h3>
-
-            <p>
-              An upcoming modern cafe website
-              featuring product visuals,
-              smooth animations and a stylish menu.
-            </p>
-
-            <span class="project-status">
-              ↗ Planned Project
-            </span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-art art-shop">
-            <span class="project-symbol">⬡</span>
-            <span class="art-caption">ONLINE STORE</span>
-          </div>
-
-          <div class="project-info">
-            <p class="project-category">PHP • MYSQL • JAVASCRIPT</p>
-
-            <h3>Full-Stack E-Commerce</h3>
-
-            <p>
-              A planned shopping platform
-              with product management,
-              shopping cart and database features.
-            </p>
-
-            <span class="project-status">
-              ↗ Planned Project
-            </span>
-          </div>
-        </article>
-
-      </div>
-
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="section container" id="skills">
+    <!-- =========================
+         SKILLS
+    ========================== -->
+    <section class="skills section" id="skills">
 
-      <div class="section-heading reveal">
-        <p class="section-tag">03 / MY TOOLKIT</p>
+      <div class="container">
 
-        <h2>
-          Technologies I'm
-          <span class="gradient-text">Learning.</span>
-        </h2>
+        <div class="section-heading reveal">
 
-        <p>
-          Building my development skills
-          through practice and real projects.
-        </p>
+          <span class="section-label">
+            03 / Skills
+          </span>
+
+          <h2>
+            Technologies I use and
+            <span>skills I'm developing.</span>
+          </h2>
+
+        </div>
+
+        <div class="skills-layout">
+
+          <div class="skills-panel reveal">
+
+            <h3>Frontend</h3>
+
+            <div class="skill-items">
+
+              <div class="skill">
+                <span>HTML5</span>
+                <strong>Semantic Structure</strong>
+              </div>
+
+              <div class="skill">
+                <span>CSS3</span>
+                <strong>Responsive UI & Animation</strong>
+              </div>
+
+              <div class="skill">
+                <span>JavaScript</span>
+                <strong>Interactive Interfaces</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="skills-panel reveal">
+
+            <h3>Currently Learning</h3>
+
+            <div class="skill-items">
+
+              <div class="skill">
+                <span>PHP</span>
+                <strong>Backend Development</strong>
+              </div>
+
+              <div class="skill">
+                <span>MySQL</span>
+                <strong>Database Fundamentals</strong>
+              </div>
+
+              <div class="skill">
+                <span>Full Stack</span>
+                <strong>Complete Web Applications</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="skills-panel reveal">
+
+            <h3>Workflow</h3>
+
+            <div class="skill-items">
+
+              <div class="skill">
+                <span>Git</span>
+                <strong>Version Control</strong>
+              </div>
+
+              <div class="skill">
+                <span>GitHub</span>
+                <strong>Code & Deployment</strong>
+              </div>
+
+              <div class="skill">
+                <span>VS Code</span>
+                <strong>Development Environment</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-
-      <div class="skills-grid reveal">
-
-        <div class="skill-item">
-          <span class="skill-icon">🌐</span>
-          <div>
-            <strong>HTML5</strong>
-            <small>Web Structure</small>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <span class="skill-icon">🎨</span>
-          <div>
-            <strong>CSS3</strong>
-            <small>Design & Animation</small>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <span class="skill-icon">⚡</span>
-          <div>
-            <strong>JavaScript</strong>
-            <small>Interactivity</small>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <span class="skill-icon">🐘</span>
-          <div>
-            <strong>PHP</strong>
-            <small>Backend Development</small>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <span class="skill-icon">🗄️</span>
-          <div>
-            <strong>MySQL</strong>
-            <small>Database Fundamentals</small>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <span class="skill-icon">🔀</span>
-          <div>
-            <strong>Git & GitHub</strong>
-            <small>Version Control</small>
-          </div>
-        </div>
-
-      </div>
-
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section container" id="contact">
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section class="contact section" id="contact">
 
-      <div class="contact-box reveal">
+      <div class="container">
 
-        <p class="section-tag">04 / LET'S CONNECT</p>
+        <div class="contact-card reveal">
 
-        <h2>
-          Let's Build Something
-          <span class="gradient-text">Amazing.</span>
-        </h2>
+          <span class="section-label">
+            04 / Contact
+          </span>
 
-        <p>
-          I'm growing as a developer and looking forward
-          to learning, collaborating and building
-          meaningful digital experiences.
-        </p>
+          <h2>
+            Have an idea?
+            <span>Let's build something.</span>
+          </h2>
 
-        <p class="contact-note">
-          Professional contact information and GitHub
-          profile link will be added soon.
-        </p>
+          <p>
+            I'm continuously improving my skills and building practical
+            projects. You can explore my work and source code through
+            the links below.
+          </p>
 
-        <a href="#projects" class="btn btn-primary">
-          Explore My Projects ↗
-        </a>
+          <div class="contact-actions">
+
+            <a
+              href="https://github.com/ahsanawan-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              GitHub Profile ↗
+            </a>
+
+            <a
+              href="https://ahsanawan-dev.github.io/3d-portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              Current Portfolio ↗
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
-
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer class="footer">
 
     <div class="container footer-inner">
 
-      <a href="#home" class="logo">
+      <a href="#home" class="footer-logo">
         AHSAN<span>.</span>
       </a>
 
       <p>
-        © <span id="year"></span>
-        Muhammad Ahsan Awan.
-        All rights reserved.
+        Built with HTML, CSS & JavaScript.
       </p>
 
-      <a href="#home" class="back-top">
-        Back to Top ↑
-      </a>
+      <p>
+        © <span id="currentYear"></span> Muhammad Ahsan Awan
+      </p>
 
     </div>
 
   </footer>
+
+  <!-- Back To Top -->
+  <a
+    href="#home"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </a>
 
 </body>
 </html>
