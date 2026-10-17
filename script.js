@@ -88,10 +88,9 @@ window.addEventListener("resize", () => {
 ====================================== */
 
 const words = [
-  "Full-Stack Developer",
-  "Creative Web Developer",
-  "Frontend Enthusiast",
-  "Future Software Engineer"
+  "Web Developer",
+  "Frontend Developer",
+  "Creative Coder"
 ];
 
 let wordIndex = 0;
@@ -566,3 +565,4 @@ console.log(
   console.log("AHSAN Portfolio V2.0 effects ready!");
 
 })();
+

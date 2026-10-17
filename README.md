@@ -1,118 +1,58 @@
+# Interactive Developer Portfolio
 
-# Muhammad Ahsan Awan — 3D Developer Portfolio
+A personal website by **Muhammad Ahsan Awan**, built with HTML, CSS and JavaScript. It brings working projects, source code, and my development direction into one place.
 
-A modern, interactive, and responsive personal portfolio website built using HTML, CSS, and JavaScript.
+**[View live portfolio](https://ahsanawan-dev.github.io/3d-portfolio/)** · [GitHub profile](https://github.com/ahsanawan-dev)
 
-This project represents my journey as an aspiring Full-Stack Web Developer, combining creative design with practical frontend development skills.
+[![Portfolio homepage with its animated CSS cube](docs/preview.jpg)](https://ahsanawan-dev.github.io/3d-portfolio/)
 
-## 🌐 Live Demo
+*Preview captured from the live deployment. The deployed site may lag behind the latest source commit.*
 
-**Visit my portfolio:**
+## Features
 
-https://ahsanawan-dev.github.io/3d-portfolio/
+- Animated CSS 3D cube with pointer interactions.
+- Two published projects with screenshots, demo links, and source code.
+- Responsive navigation, scroll progress, and a back-to-top button.
+- Typing animation, canvas particles, and card hover effects.
+- Reduced-motion handling in CSS and JavaScript.
+- A separate expandable section for future project ideas.
 
-## ✨ Features
+## Run locally
 
-- Interactive rotating CSS 3D cube
-- Animated particle background
-- Modern dark-themed interface
-- Purple and cyan gradient effects
-- Glassmorphism-inspired design
-- Dynamic typing text animation
-- Mouse-following glow effects
-- Interactive 3D project card hover effects
-- Smooth scrolling and section reveal animations
-- Responsive navigation menu
-- Scroll progress indicator
-- Back-to-top button
-- Mobile, tablet, and desktop responsive layouts
-- Reduced-motion accessibility support
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Semantic website structure |
-| CSS3 | Styling, layouts, and 3D animations |
-| JavaScript | Interactive features and effects |
-| Git | Version control |
-| GitHub | Source code hosting |
-| GitHub Pages | Website deployment |
-
-## 📁 Project Structure
-
-```text
-3d-portfolio/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
-
-## 🚀 Getting Started
-
-To run this project locally:
-
-1. Clone the repository:
+No package installation or build step is required. With Git and Python 3 installed:
 
 ```bash
 git clone https://github.com/ahsanawan-dev/3d-portfolio.git
+cd 3d-portfolio
+python -m http.server 8000
 ```
 
-2. Open the `3d-portfolio` folder in Visual Studio Code.
+Open **http://localhost:8000**. If your system uses `python3`, use `python3 -m http.server 8000`. You can also serve the folder with VS Code's Live Server extension.
 
-3. Open `index.html` using the Live Server extension.
+## How it works
 
-4. Explore the portfolio in your browser.
+| File | Responsibility |
+| --- | --- |
+| `index.html` | Page sections, project content, and navigation |
+| `style.css` | Layouts, 3D transforms, visual effects, and media queries |
+| `script.js` | Navigation, typing, pointer effects, scroll state, and particles |
+| `docs/preview.jpg` | Screenshot of the live portfolio |
 
-No additional frontend dependencies or build tools are required.
+The project uses browser APIs and static files. Its 3D cube is built with CSS transforms; no 3D engine or frontend framework is required.
 
-## 📱 Responsive Design
+## Scope and next steps
 
-The portfolio is designed to adapt to multiple screen sizes, including:
+This is a static frontend portfolio. The connection section links to GitHub; there is no email form or backend. PHP and MySQL are part of my studies and upcoming work.
 
-- Mobile phones
-- Tablets
-- Laptops
-- Desktop monitors
-- Larger browser displays
+- Check layouts and navigation across mobile devices and keyboard input.
+- Continue improving accessibility and animation performance.
+- Add a database-backed project once it is built and ready to explore.
 
-## 🎯 Project Purpose
+VELORA's preview is loaded from its GitHub repository and needs an internet connection. Planned projects are labelled separately from published work.
 
-This project was developed to practice and demonstrate:
+## Feedback
 
-- Responsive web development
-- CSS 3D transformations
-- JavaScript DOM manipulation
-- Animation techniques
-- User interface design
-- Git and GitHub workflows
-- Static website deployment
+Found a problem? [Open an issue](https://github.com/ahsanawan-dev/3d-portfolio/issues) with the page section, browser, and steps to reproduce it.
 
-## 🔮 Future Improvements
+Built by [Muhammad Ahsan Awan](https://github.com/ahsanawan-dev).
 
-- Add completed real-world projects
-- Improve performance and accessibility
-- Add professional project screenshots
-- Integrate a working contact solution
-- Expand the portfolio with additional technologies
-
-## 👨‍💻 About the Developer
-
-**Muhammad Ahsan Awan**
-
-Aspiring Full-Stack Web Developer.
-
-I'm passionate about web development, creative user interfaces, and building useful digital experiences.
-
-My long-term goal is to grow as a professional developer and contribute to international software projects.
-
-## 🔗 Connect With Me
-
-**GitHub:** https://github.com/ahsanawan-dev
-
-**Portfolio:** https://ahsanawan-dev.github.io/3d-portfolio/
-
----
-
-Made with dedication and creativity by **Muhammad Ahsan Awan**.
